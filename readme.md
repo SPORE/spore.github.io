@@ -1,1 +1,1 @@
-# Here the spore description
+# Spore specifications website
