@@ -113,7 +113,7 @@
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
-      <div class="row">
+      <div class="row" id="clients">
         <div class="col-lg-4">
           <img class="img-circle" src="img/lua.gif" alt="lua" width="140" height="140">
           <h2>Lua</h2>
@@ -183,38 +183,69 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <h2 class="featurette-heading">API Description</h2>
+          <p class="lead">Describe your API with a JSON file.</p>
+          <p><a class="btn btn-default" href="https://github.com/SPORE/specifications/blob/master/spore_description.pod" role="button">Description &raquo;</a>
+          <a class="btn btn-default" href="https://github.com/SPORE/api-description" role="button">Examples &raquo;</a></p>
         </div>
+        <div class="col-md-7">
+            <code><pre>
+{
+  "base_url": "http://github.com/api/v2/",
+  "version": "0.4",
+  "methods": {
+    "list_commits": {
+      "path": "/:format/commits/list/:user/:repo/:branch",
+      "method": "GET",
+      "required_params": ["format", "user", "repo", "branch"]
+    },
+    "list_file_commits": {
+      "path": "/:format/commits/list/:user/:repo/:branch/:path",
+      "method": "GET",
+      "required_params": ["format", "user", "repo", "branch", "path"]
+    },
+    "get_commit_info": {
+      "path": "/:format/commits/show/:user/:repo/:sha",
+      "method": "GET",
+      "required_params": ["format", "user", "repo", "sha"]
+    }
+  },
+  "expected_status": [200],
+  "name": "GitHub",
+  "authority": "http://github.com/SPORE",
+  "meta": {
+    "documentation": "http://develop.github.com/",
+    "module": "commit"
+  }
+}
+            </pre></code>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Use a client implementation to request your API ...</span></h2>
+          <p class="lead">The clients for Clojure, Javascript, Lua, Nodejs, Perl, Python, Ruby, Livescript and Groovy are already here.</p>
+          <p><a class="btn btn-default" href="#clients" role="button">Clients &raquo;</a></p>
+        </div>
+        <div class="col-md-5"></div>
       </div>
 
       <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+          <h2 class="featurette-heading">... or create your own client for your favorite language.</h2>
+          <p class="lead">Follow the specification to create your own client implementation and contribute to the spore community.</p>
+          <p><a class="btn btn-default" href="https://github.com/SPORE/specifications/blob/master/spore_implementation.pod" role="button">Client implementation &raquo;</a></p>
         </div>
-        <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
+        <div class="col-md-5 col-md-pull-7"></div>
       </div>
 
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
 
       <hr class="featurette-divider">
 
@@ -224,7 +255,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 spore.github.io</p>
       </footer>
 
     </div><!-- /.container -->
